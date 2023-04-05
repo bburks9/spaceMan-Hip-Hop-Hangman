@@ -1,0 +1,70 @@
+h1 {
+    color: rgb(45, 41, 40);
+    font-family: 'comic sans', ;
+    font-size: 60px;
+}
+
+body {
+    background-image: url('imgs/shhhbackground.jpg');
+    background-size :100%;
+    background-repeat : no-repeat;
+    background-position: center;
+    text-align: center;
+    margin: -35px;
+}
+
+#guess {
+    letter-spacing: 17px;
+    font-size: 32px;
+    height: 143px;
+    line-height: 184px;
+    margin-top: -30px;
+}
+
+#-img {
+    font-size: 30px;
+    margin: -185px;
+}
+
+#letter-button{
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size:15px;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color:white;
+    font-family: 'comic sans', ;
+    cursor: pointer;
+    letter-spacing: 4px;
+}
+#reset {
+    border-radius: 8px;
+    padding: 7px 28px;
+    margin-bottom: 37px;
+    font-size:15px;
+    background-color:gold;
+    font-family: 'comic sans', ;
+    cursor: pointer;
+    letter-spacing: 4px;
+}
+
+#wrong {
+    position: relative;
+    margin-top: -181px;
+    font-family: 'comic sans', ;
+    font-size: 24px;
+}
+
+#message {
+    position: relative;
+    width: 50%;
+    left: 1px;
+    top: -177px;
+    margin: -492px auto;
+    display: none;
+    border-radius: 5px;
+    color: rgb(225, 77, 31);
+    padding: 130px;
+    font-family: 'comic sans', 
+    font-size 30px;
+} 
