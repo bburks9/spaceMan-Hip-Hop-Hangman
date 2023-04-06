@@ -1,16 +1,16 @@
 h1 {
-    color: rgb(45, 41, 40);
-    font-family: 'comic sans', ;
+    color: rgb(123, 31, 8);
+    font-family: 'Comic Sans', ;
     font-size: 60px;
 }
 
 body {
     background-image: url('imgs/shhhbackground.jpg');
-    background-size :100%;
+    background-size : cover;
     background-repeat : no-repeat;
-    background-position: center;
+    background-position: center 30%;
     text-align: center;
-    margin: -35px;
+    margin: -35px
 }
 
 #guess {
@@ -32,7 +32,7 @@ body {
     font-size:15px;
     font-weight: bold;
     white-space: nowrap;
-    background-color:white;
+    background-color: whitesmoke;
     font-family: 'comic sans', ;
     cursor: pointer;
     letter-spacing: 4px;
@@ -65,6 +65,12 @@ body {
     border-radius: 5px;
     color: rgb(225, 77, 31);
     padding: 130px;
-    font-family: 'comic sans', 
-    font-size 30px;
+    font-family: 'Comic Sans', serif; 
+    font-size: 30px;
 } 
+#gameBoard {
+position: fixed;
+bottom: 12%;
+right: 3%;
+
+}

@@ -19,14 +19,19 @@ var words = [
 var secretWord, wrongCount, guess;
 
 /*------------- cached element references -------------*/
-var $guess = $('#guess');
-var $img = $('#hang-img');
-var $message = $('#message');
-
+var guess = document.getElementById('guess');
+//var img = ('#hang-img');
+var message = document.getElementById('message');
+const letters = document.querySelectorAll(".letter-button");
+const wrong = document.querySelector('#wrong')
+console.log(wrong)
 /*------------- event listeners -------------*/
-$('#letters').on('click', handleLetterClick);
+//('#letters').on('click', handleLetterClick);
 
-$('#reset').on('click', initialize);
+   
+   
+
+//('#reset').on('click', initialize);
 
 /*------------- functions -------------*/
 initialize();
@@ -34,8 +39,19 @@ initialize();
 function initialize() {
     wrongCount = 0;
     secretWord = words[getRandomInt(words.length -1)];
-
+console.log(secretWord)
     guess = "";
+
+    letters.forEach(letter => {
+        // console.log(letter); 
+        letter.addEventListener('click', function(evt){
+            let guess = evt.target.innerText
+            let letterInWord = secretWord.includes(guess)
+            console.log(letterInWord)
+        })      
+        
+    })   
+        
     
     for (var i = 0; i < secretWord.length; i++) {
       var currentLetter = secretWord[i];
@@ -46,7 +62,7 @@ function initialize() {
       }
     };
 
-    $('button.letter-button').prop('disabled', false);
+   // ('button.letter-button').prop('enabled', false);
     render();
 }
 
@@ -55,24 +71,32 @@ function getRandomInt(max) {
 }
 
 function render() {
-    $guess.html(guess);
-    $('#wrong').html(`WRONG GUESSES: ${wrongCount}`);
-    $img.attr('src', 'images/img' + wrongCount + '.png')
+   // guess.html(guess);
+    //('#wrong').html(`WRONG GUESSES: {wrongCount}`);
+   // img.attr('src', 'images/img' + wrongCount + '.png')
 
     if (guess === secretWord) {
-        $message.html("Winner Winner Big Spender!");
-        $message.fadeIn();
-    } else if ( wrongCount === 6) {
-        $message.html("Sorry Not Sorry! Bing Bong Game Over.");
-        $message.fadeIn();
+        message.html("Winner Winner Big Spender!");
+        message.fadeIn();
+    } else if ( wrongCount === 12) {
+        message.html("Sorry Not Sorry! Bing Bong Game Over.");
+        message.fadeIn();
     } else {
-        $message.html("")
-        $message.hide();
+        message.html("")
+        message.hide();
     }
 }
 
+function handleClick(evt){
+    let testWord = 'BIGGIE'
+    let letter = evt.target.innerText
+    let letterInWord = testWord.includes(letter)
+    console.log(letterInWord)
+}
+
+
 function handleLetterClick (evt) {
-    if (wrongCount === 6) return;
+    if (wrongCount === 12) return;
 
     var letter = evt.target.textContent;
     console.log(secretWord);
@@ -90,8 +114,8 @@ function handleLetterClick (evt) {
         }
     }
     
-    $(evt.target).prop('disabled', true);
-    $('#reset').prop('disabled', false);
+    (evt.target).prop('enabled', true);
+    ('#reset').prop('enabled', false);
     render();
 }
     
